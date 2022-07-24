@@ -3,10 +3,10 @@ import mediapipe as mp
 import numpy as np
 from tensorflow.keras.models import load_model
 
-actions = ['come', 'away', 'spin']
+actions = ['question', 'can''t listen', 'can''t watch']
 seq_length = 30
 
-model = load_model('models/model2_1.0.h5')
+model = load_model('models/model.h5')
 
 # MediaPipe hands model
 mp_hands = mp.solutions.hands
