@@ -3,7 +3,7 @@ import mediapipe as mp
 import numpy as np
 import time, os
 
-actions = ['question', 'can''t listen', 'can''t watch']
+actions = ['Question', 'Can''t listen', 'Can''t watch']
 seq_length = 30
 secs_for_action = 30
 
