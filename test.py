@@ -3,6 +3,11 @@ import mediapipe as mp
 import numpy as np
 from tensorflow.keras.models import load_model
 
+import smtplib 
+from email.mime.text import MIMEText
+
+studentName = "Petter"
+action_count = [0, 0, 0] 
 actions = ['question', 'can''t listen', 'can''t watch']
 seq_length = 30
 
@@ -35,6 +40,8 @@ while cap.isOpened():
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     result = hands.process(img)
     img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+    
+    status = 0
 
     if result.multi_hand_landmarks is not None:
         for res in result.multi_hand_landmarks:
@@ -84,11 +91,35 @@ while cap.isOpened():
             this_action = '?'
             if action_seq[-1] == action_seq[-2] == action_seq[-3]:
                 this_action = action
-
+                status = 1
+                if (prev_status != status):
+                    action_count[i_pred] += 1
+                
             cv2.putText(img, f'{this_action.upper()}', org=(int(res.landmark[0].x * img.shape[1]), int(res.landmark[0].y * img.shape[0] + 20)), fontFace=cv2.FONT_HERSHEY_SIMPLEX, fontScale=1, color=(255, 255, 255), thickness=2)
-
+            
+    prev_status = status
+    
     # out.write(img0)
     # out2.write(img)
     cv2.imshow('img', img)
     if cv2.waitKey(1) == ord('q'):
+        s = smtplib.SMTP('smtp.gmail.com', 587) #서버 접속
+
+        s.starttls()
+        s.login('gmail주소', '앱 비밀번호') #로그인
+
+        msg = MIMEText("Today Lecture : %s's attitude toward class\n\nnumber of Question : %d\ncannot Hear you well: %d\ncannot See the screen well: %d"%(studentName, action_count[0], action_count[1], action_count[2]))
+        msg['Subject'] = "[Attitude Analysis] Analysis of student %s"%studentName 
+
+
+        #질문이 있다: have Question : action_count[0]
+        #잘 들리지 않는다: cannot hear you well: action_count[1]
+        #잘 보이지 않는다: cannot see the screen well: action_count[2]
+
+
+        s.sendmail("보내는 이메일", "받는 이메일", msg.as_string()) #보내는 이메일, 받는 이메일
+
+        # 세션 종료
+        s.quit()
+        
         break
