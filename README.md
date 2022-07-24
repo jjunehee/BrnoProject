@@ -1,38 +1,59 @@
-# Hand Gesture Recognition
+[//]: # (# Hand Gesture Recognition)
 
-Deep learning based hand gesture recognition using LSTM and MediaPipie.
+[//]: # ()
+[//]: # (Deep learning based hand gesture recognition using LSTM and MediaPipie.)
 
-[Demo video using PingPong Robot](https://youtu.be/g16KvSEq0XU)
+[//]: # ()
+[//]: # ([Demo video using PingPong Robot]&#40;https://youtu.be/g16KvSEq0XU&#41;)
 
-![](result/thumb.webp)
+[//]: # ()
+[//]: # (![]&#40;result/thumb.webp&#41;)
 
-<img src="result/result.gif" width="512px">
+[//]: # ()
+[//]: # (<img src="result/result.gif" width="512px">)
 
-## Files
+[//]: # ()
+[//]: # (## Files)
 
-Pretrained model in *models* directory.
+[//]: # ()
+[//]: # (Pretrained model in *models* directory.)
 
-**create_dataset.py**
+[//]: # ()
+[//]: # (**create_dataset.py**)
 
-Collect dataset from webcam.
+[//]: # ()
+[//]: # (Collect dataset from webcam.)
 
-**train.ipynp**
+[//]: # ()
+[//]: # (**train.ipynp**)
 
-Create and train the model using collected dataset.
+[//]: # ()
+[//]: # (Create and train the model using collected dataset.)
 
-**test.py**
+[//]: # ()
+[//]: # (**test.py**)
 
-Test the model using webcam or video.
+[//]: # ()
+[//]: # (Test the model using webcam or video.)
 
-**robot.py**
+[//]: # ()
+[//]: # (**robot.py**)
 
-Gesture control using PingPong Robot.
+[//]: # ()
+[//]: # (Gesture control using PingPong Robot.)
 
-## Dependency
+[//]: # ()
+[//]: # (## Dependency)
 
-- Python 3
-- TensorFlow 2.4
-- sklearn
-- numpy
-- OpenCV
-- MediaPipe
+[//]: # ()
+[//]: # (- Python 3)
+
+[//]: # (- TensorFlow 2.4)
+
+[//]: # (- sklearn)
+
+[//]: # (- numpy)
+
+[//]: # (- OpenCV)
+
+[//]: # (- MediaPipe)
