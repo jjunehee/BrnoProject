@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/BrnoProject.iml" filepath="$PROJECT_DIR$/.idea/BrnoProject.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/gesture-recognition.iml" filepath="$PROJECT_DIR$/.idea/gesture-recognition.iml" />
+>>>>>>> f400c63c23150b22b4f59dc6cce705d65b30317c
     </modules>
   </component>
 </project>

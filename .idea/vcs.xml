@@ -2,6 +2,9 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+<<<<<<< HEAD
     <mapping directory="$PROJECT_DIR$/dlib" vcs="Git" />
+=======
+>>>>>>> f400c63c23150b22b4f59dc6cce705d65b30317c
   </component>
 </project>
